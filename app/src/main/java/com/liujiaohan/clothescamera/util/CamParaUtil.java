@@ -28,7 +28,7 @@ public class CamParaUtil {
 
         int i=0;
         for (Camera.Size s:list){
-            if ((s.width>=minWidth)&&equalRate(s,th)){
+            if ((s.width>=1000)&&equalRate(s,th)){
                 break;
             }
             i++;
@@ -44,7 +44,7 @@ public class CamParaUtil {
 
         int i = 0;
         for(Camera.Size s:list){
-            if((s. width>= minWidth) && equalRate(s, th)){
+            if((s. width>= 1000) && equalRate(s, th)){
                 break;
             }
             i++;
@@ -57,7 +57,7 @@ public class CamParaUtil {
 
     private boolean equalRate(Camera.Size s, float rate){
         float r = (float)(s.width)/(float)(s.height);
-        return (Math.abs(r - rate) <= 0.03);
+        return (Math.abs(r - rate) <= 0.1);
 //        if(Math.abs(r - rate) <= 0.03)
 //        {
 //            return true;

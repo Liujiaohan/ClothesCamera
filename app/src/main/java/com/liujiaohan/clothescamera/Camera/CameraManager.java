@@ -207,6 +207,7 @@ public class CameraManager {
     public void doSave(int clothId){
         Bitmap clothesBitmap=null;
         clothesBitmap=BitmapFactory.decodeResource(ContextUtil.getContext().getResources(), clothId);
+
         int clothesWidth=clothesBitmap.getWidth();
         int clothesHeight=clothesBitmap.getHeight();
         //保存图片到sdcard
