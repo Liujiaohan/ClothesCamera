@@ -85,13 +85,25 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        list.add(R.drawable.img_avatar_01);
-        list.add(R.drawable.img_avatar_02);
-        list.add(R.drawable.img_avatar_03);
-        list.add(R.drawable.img_avatar_04);
-        list.add(R.drawable.img_avatar_05);
-        list.add(R.drawable.img_avatar_06);
-        list.add(R.drawable.nvpuzhuang1);
+        Intent intent=getIntent();
+        int type=intent.getIntExtra("type",1);
+        switch (type){
+            case 1:
+                list.add(R.drawable.luolita1);
+                list.add(R.drawable.luolita2);
+                list.add(R.drawable.luolita3);
+                break;
+            case 2:
+                list.add(R.drawable.xiaofu1);
+                list.add(R.drawable.xiaofu2);
+                list.add(R.drawable.xiaofu3);
+                break;
+            case 3:
+                list.add(R.drawable.nvpu1);
+                list.add(R.drawable.nvpu2);
+                list.add(R.drawable.nvpu3);
+                break;
+        }
     }
 
     private class MyAdapter extends RecyclerView.Adapter {
