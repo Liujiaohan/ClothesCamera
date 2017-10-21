@@ -1,5 +1,6 @@
 package com.liujiaohan.clothescamera.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -46,7 +47,7 @@ public class ChooseActivity extends AppCompatActivity {
                 MyAdapter.MyViewHolder myHolder = (MyAdapter.MyViewHolder) viewHolder;
                 viewHolder.itemView.setAlpha(1 - Math.abs(ratio) * 0.2f);
                 if (direction == CardConfig.SWIPING_LEFT) {
-                    myHolder.dislikeImageView.setAlpha(Math.abs(ratio));
+                 //   myHolder.dislikeImageView.setAlpha(Math.abs(ratio));
                 } else if (direction == CardConfig.SWIPING_RIGHT) {
                     myHolder.likeImageView.setAlpha(Math.abs(ratio));
                 } else {
@@ -90,6 +91,7 @@ public class ChooseActivity extends AppCompatActivity {
         list.add(R.drawable.img_avatar_04);
         list.add(R.drawable.img_avatar_05);
         list.add(R.drawable.img_avatar_06);
+        list.add(R.drawable.nvpuzhuang1);
     }
 
     private class MyAdapter extends RecyclerView.Adapter {
@@ -100,9 +102,17 @@ public class ChooseActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
             ImageView avatarImageView = ((MyViewHolder) holder).avatarImageView;
             avatarImageView.setImageResource(list.get(position));
+            avatarImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(ChooseActivity.this,CertainClothesFittingActivity.class);
+                    intent.putExtra("clothId",list.get(position));
+                    startActivity(intent);
+                }
+            });
         }
 
         @Override

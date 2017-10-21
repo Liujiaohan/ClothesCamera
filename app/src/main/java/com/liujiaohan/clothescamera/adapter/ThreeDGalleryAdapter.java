@@ -10,26 +10,28 @@ import com.liujiaohan.clothescamera.activity.FittingRoom;
 import com.liujiaohan.clothescamera.activity.MainActivity;
 import com.liujiaohan.clothescamera.util.ContextUtil;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017-04-25.
  */
 
 public class ThreeDGalleryAdapter extends PagerAdapter {
-    private int[] clothesList;
+    private List<Integer> clothesList;
 
-    public ThreeDGalleryAdapter(int[] clothesList) {
+    public ThreeDGalleryAdapter(List<Integer> clothesList) {
         this.clothesList = clothesList;
     }
 
     @Override
     public int getCount() {
-        return clothesList.length;
+        return clothesList.size();
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView cloth=new ImageView(ContextUtil.getContext());
-        cloth.setImageResource(clothesList[position]);
+        cloth.setImageResource(clothesList.get(position));
         container.addView(cloth);
         return cloth;
     }

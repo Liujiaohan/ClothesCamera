@@ -79,7 +79,7 @@ public class FittingRoom extends AppCompatActivity implements View.OnClickListen
         }
         imgGallery.setLayoutParams(lp);
         imgGallery.setPageMargin(0);
-        imgGallery.setAdapter(new ThreeDGalleryAdapter(clothesList));
+    //    imgGallery.setAdapter(new ThreeDGalleryAdapter(clothesList));
         imgGallery.setPageTransformer(true,new ThreeDTransformer());
 
         findViewById(R.id.activity_fitting_room).setOnTouchListener(new View.OnTouchListener() {

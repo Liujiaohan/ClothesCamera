@@ -214,7 +214,16 @@ public class CameraManager {
         if(null != newBitmap)
         {
             Canvas canvas=new Canvas(newBitmap);
-            canvas.drawBitmap(clothesBitmap,Math.abs(w-clothesWidth)/2,Math.abs(h-clothesHeight)/2,new Paint());
+            float scaleWidth=((float)w/clothesWidth);
+            float scaleHeight=((float)h/clothesHeight);
+            Matrix matrix=new Matrix();
+            matrix.postScale(scaleWidth,scaleHeight);
+            Bitmap scaledBitmap=Bitmap.createBitmap(clothesBitmap,0,0,clothesWidth,
+                    clothesHeight,matrix,true);
+            Log.i(TAG, "doSave: "+newBitmap.getWidth()+" "+newBitmap.getHeight()+"scaledBitmap"
+                    +scaledBitmap.getWidth()+" "+scaledBitmap.getHeight());
+            canvas.drawBitmap(scaledBitmap,Math.abs(w-scaledBitmap.getWidth())/2
+                    ,Math.abs(h-scaledBitmap.getHeight())/2,new Paint());
             //设置FOCUS_MODE_CONTINUOUS_VIDEO)之后，myParam.set("rotation", 90)失效。
             //图片竟然不能旋转了，故这里要旋转下
             FileUtil.saveBitmap(newBitmap);

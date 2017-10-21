@@ -1,6 +1,7 @@
 package com.liujiaohan.clothescamera.activity;
 
         import android.content.Context;
+        import android.content.Intent;
         import android.graphics.Point;
 
         import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,9 @@ package com.liujiaohan.clothescamera.activity;
         import com.liujiaohan.clothescamera.util.DisplayUtil;
         import com.liujiaohan.clothescamera.util.ShareUtil;
 
+        import java.util.ArrayList;
+        import java.util.List;
+
 public class CertainClothesFittingActivity extends AppCompatActivity implements View.OnClickListener,CameraManager.CamOpenOverCallback {
     private static final String TAG="CameraActivity";
     private CameraSurfaceView mCameraSurfaceView;
@@ -32,7 +36,7 @@ public class CertainClothesFittingActivity extends AppCompatActivity implements 
     static Context context=null;
     private ViewSwitcher viewSwitcher;
     private ImageButton btnShare;
-    private int[] clothesList={R.mipmap.c15_1,R.mipmap.c15_2,R.mipmap.c15_3};
+    private List<Integer> clothesList=new ArrayList<>();
 
     Button btnTake;
     Button btnSave;
@@ -76,6 +80,8 @@ public class CertainClothesFittingActivity extends AppCompatActivity implements 
         }
         imgGallery.setLayoutParams(lp);
         imgGallery.setPageMargin(0);
+        Intent intent=getIntent();
+        clothesList.add(intent.getIntExtra("clothId",R.drawable.img_avatar_01));
         imgGallery.setAdapter(new ThreeDGalleryAdapter(clothesList));
         imgGallery.setPageTransformer(true,new ThreeDTransformer());
 
@@ -109,7 +115,7 @@ public class CertainClothesFittingActivity extends AppCompatActivity implements 
                 break;
             case R.id.btn_save_certain:
                 Log.i(TAG,"save");
-                CameraManager.getInstance().doSave(clothesList[imgGallery.getCurrentItem()]);
+                CameraManager.getInstance().doSave(clothesList.get(imgGallery.getCurrentItem()));
                 CameraManager.getInstance().rePreview();
                 imgGallery.setScrollable(true);
                 Toast.makeText(this,"save successfully",Toast.LENGTH_SHORT).show();
@@ -118,7 +124,7 @@ public class CertainClothesFittingActivity extends AppCompatActivity implements 
             case R.id.btn_share_certain:
                 Log.i(TAG,"share");
                 btnShare.setVisibility(View.INVISIBLE);
-                CameraManager.getInstance().doSave(clothesList[imgGallery.getCurrentItem()]);
+                CameraManager.getInstance().doSave(clothesList.get(imgGallery.getCurrentItem()));
                 ShareUtil.shareBitmap(CameraManager.getInstance().getNewBitmap(),this);
                 break;
             default:

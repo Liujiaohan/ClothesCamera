@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -15,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.ChooseActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity.CameraActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.FittingRoom" />
-        <activity android:name=".activity.CertainClothesFittingActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.CertainClothesFittingActivity"/>
+
     </application>
 
 </manifest>
