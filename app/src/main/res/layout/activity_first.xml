@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C1D5FF"
+    tools:context="com.liujiaohan.clothescamera.activity.FirstActivity">
+
+    <ImageView
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="34dp"
+        android:background="@mipmap/buff"
+        android:layout_width="293dp"
+        android:layout_height="134dp" />
+    <Button
+        android:id="@+id/firstpage_btn"
+        android:background="@mipmap/click_open"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="69dp"
+        android:layout_width="206dp"
+        android:layout_height="58dp" />
+</LinearLayout>
