@@ -1,5 +1,6 @@
 package com.liujiaohan.clothescamera.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,8 @@ public class FirstActivity extends AppCompatActivity {
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent intent = new Intent(FirstActivity.this, BookActivity.class);
+                    startActivity(intent);
                 }
             });
         }

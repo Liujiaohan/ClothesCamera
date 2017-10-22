@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#c1d5ff"
+    tools:context="com.liujiaohan.clothescamera.activity.BookActivity">
+
+    <TextView
+        android:background="#c1d5ff"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+    <LinearLayout
+        android:background="#e3ecff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="215dp">
+            <ImageView
+                android:id="@+id/java"
+                android:background="@mipmap/java"
+                android:layout_marginLeft="14dp"
+                android:layout_width="159dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:id="@+id/py"
+                android:background="@mipmap/python"
+                android:layout_marginLeft="14dp"
+                android:layout_width="159dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp">
+            <TextView
+                android:layout_marginTop="4.5dp"
+                android:layout_marginLeft="43dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#464646"
+                tools:text="Java选手专属"
+                />
+            <TextView
+                android:layout_marginLeft="63dp"
+                android:layout_marginTop="4.5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#464646"
+                tools:text="Python选手专属"
+                />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/c"
+            android:background="@mipmap/c"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="14dp"
+            android:layout_width="159dp"
+            android:layout_height="215dp" />
+        <TextView
+            android:layout_marginLeft="46.5dp"
+            android:layout_marginTop="4.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#464646"
+            tools:text="C++选手专属"
+            />
+    </LinearLayout>
+</LinearLayout>
