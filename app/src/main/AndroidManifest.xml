@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".activity.ChooseActivity"
+            android:name=".activity.FirstActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,11 +26,15 @@
         <activity
             android:name=".activity.CameraActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.FirstActivity"/>
+<<<<<<< HEAD
+        <activity android:name=".activity.ChooseActivity"/>
+=======
+        <activity android:name=".activity.ChooseActivity" />
+>>>>>>> 11e87c8acc26e28cac280a977813c36579312052
         <activity android:name=".activity.FittingRoom" />
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.CertainClothesFittingActivity" />
-
+        <activity android:name=".activity.BookActivity"></activity>
     </application>
 
 </manifest>
