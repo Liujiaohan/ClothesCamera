@@ -9,6 +9,11 @@
     tools:context="com.liujiaohan.clothescamera.activity.BookActivity">
 
     <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="22sp"
+        android:textColor="#333333"
+        android:text="图书主页"
         android:background="#c1d5ff"
         android:layout_marginTop="24dp"
         android:layout_width="match_parent"
@@ -63,7 +68,7 @@
         <ImageView
             android:id="@+id/c"
             android:background="@mipmap/c"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="22dp"
             android:layout_marginLeft="14dp"
             android:layout_width="159dp"
             android:layout_height="215dp" />
