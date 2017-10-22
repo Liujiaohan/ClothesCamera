@@ -1,6 +1,7 @@
 package com.liujiaohan.clothescamera.activity;
 
 import android.content.Intent;
+import android.support.constraint.solver.SolverVariable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liujiaohan.clothescamera.R;
@@ -25,6 +27,7 @@ import me.yuqirong.cardswipelayout.OnSwipeListener;
 public class ChooseActivity extends AppCompatActivity {
 
     private List<Integer> list = new ArrayList<>();
+    private int type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,17 +94,17 @@ public class ChooseActivity extends AppCompatActivity {
             case 1:
                 list.add(R.drawable.luolita1);
                 list.add(R.drawable.luolita2);
-                list.add(R.drawable.luolita3);
+                //list.add(R.drawable.luolita3);
                 break;
             case 2:
                 list.add(R.drawable.xiaofu1);
                 list.add(R.drawable.xiaofu2);
-                list.add(R.drawable.xiaofu3);
+                //list.add(R.drawable.xiaofu3);
                 break;
             case 3:
                 list.add(R.drawable.nvpu1);
                 list.add(R.drawable.nvpu2);
-                list.add(R.drawable.nvpu3);
+               // list.add(R.drawable.nvpu3);
                 break;
         }
     }
@@ -125,6 +128,17 @@ public class ChooseActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            switch (type){
+                case 1:
+                    ((MyViewHolder) holder).textView.setText("洛丽塔");
+                    break;
+                case 2:
+                    ((MyViewHolder) holder).textView.setText("校服");
+                    break;
+                case 3:
+                    ((MyViewHolder) holder).textView.setText("女仆");
+                    break;
+            }
         }
 
         @Override
@@ -137,12 +151,14 @@ public class ChooseActivity extends AppCompatActivity {
             ImageView avatarImageView;
             ImageView likeImageView;
             ImageView dislikeImageView;
+            TextView textView;
 
             MyViewHolder(View itemView) {
                 super(itemView);
                 avatarImageView = (ImageView) itemView.findViewById(R.id.iv_avatar);
                 likeImageView = (ImageView) itemView.findViewById(R.id.iv_like);
                 dislikeImageView = (ImageView) itemView.findViewById(R.id.iv_dislike);
+                textView=itemView.findViewById(R.id.tv_name);
             }
 
         }

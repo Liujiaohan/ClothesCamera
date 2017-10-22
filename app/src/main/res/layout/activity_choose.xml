@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#D3D6E8"
     android:orientation="vertical"
     tools:context="com.liujiaohan.clothescamera.activity.ChooseActivity">
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:text="选装界面"/>
+        android:layout_height="60dp"
+        android:background="@drawable/bac"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/font2"/>
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

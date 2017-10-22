@@ -22,7 +22,7 @@
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/sharenormal"
+        android:background="@drawable/fenxiang"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"/>
 
