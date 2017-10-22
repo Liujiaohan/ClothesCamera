@@ -6,7 +6,10 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.liujiaohan.clothescamera.R;
 
@@ -16,7 +19,14 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+        Button btn = (Button) findViewById(R.id.firstpage_btn);
+        ImageView img = (ImageView) findViewById(R.id.img);
 
+        Animation translateAnimation = AnimationUtils.loadAnimation(FirstActivity.this, R.anim.animation);
+        Animation translateAnimation1 = AnimationUtils.loadAnimation(FirstActivity.this, R.anim.animation1);
+
+        btn.startAnimation(translateAnimation1);
+        img.startAnimation(translateAnimation);
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
             int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -24,7 +34,6 @@ public class FirstActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(option);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
 
-            Button btn = (Button) findViewById(R.id.firstpage_btn);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
